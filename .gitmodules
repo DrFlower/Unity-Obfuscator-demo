@@ -1,0 +1,3 @@
+[submodule "Assets/Unity-Obfuscator"]
+	path = Assets/Unity-Obfuscator
+	url = https://github.com/DrFlower/Unity-Obfuscator.git
