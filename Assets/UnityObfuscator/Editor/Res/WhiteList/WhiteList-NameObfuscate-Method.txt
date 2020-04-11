@@ -1,0 +1,3 @@
+Completed|GameManager|HideLevelImage
+Completed|GameManager|CallbackInitialization
+Completed|Player|Restart
