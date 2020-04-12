@@ -12,19 +12,19 @@
  >> Completed
  
  > WhiteList-NameObfuscate-ClassNameOnly.txt
- >> Completed|BoardManager
- >> Completed|Enemy
- >> Completed|GameManager
- >> Completed|Loader
- >> Completed|MovingObject
- >> Completed|Player
- >> Completed|SoundManager
- >> Completed|Wall
+ >> Completed|BoardManager  
+ >> Completed|Enemy  
+ >> Completed|GameManager  
+ >> Completed|Loader  
+ >> Completed|MovingObject  
+ >> Completed|Player  
+ >> Completed|SoundManager  
+ >> Completed|Wall  
  
  > WhiteList-NameObfuscate-Method.txt
- >> Completed|GameManager|HideLevelImage
- >> Completed|GameManager|CallbackInitialization
- >> Completed|Player|Restart
+ >> Completed|GameManager|HideLevelImage  
+ >> Completed|GameManager|CallbackInitialization  
+ >> Completed|Player|Restart  
  
  
  
@@ -43,12 +43,12 @@
  Invoke调用不能混淆，故Player类中Restart方法需要放到白名单
  
   ```c#
-         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-        static public void CallbackInitialization()//GameManager line:60
-        {
-            //register the callback to be called everytime the scene is loaded
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
+  [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+  static public void CallbackInitialization()//GameManager line:60
+  {
+     //register the callback to be called everytime the scene is loaded
+     SceneManager.sceneLoaded += OnSceneLoaded;
+  }
  ```
 特性基于反射调用，故GameManager类中的CallbackInitialization方法需要放到白名单
 
