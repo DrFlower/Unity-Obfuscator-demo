@@ -12,7 +12,7 @@ namespace Flower.UnityObfuscator
         private static readonly float backgroundSpaceWidth = 5f;
         private GUIStyle box;
         private string[] ObfuscateTypeStr = new string[] { "特定范围", "白名单", "两者并用" };
-
+        private string[] ObfuscateNameTypeStr = new string[] { "随机字符", "词库" };
 
         public override void OnInspectorGUI()
         {
@@ -56,6 +56,11 @@ namespace Flower.UnityObfuscator
                     EditorGUILayout.BeginHorizontal();
                     EditorGUILayout.LabelField("混淆方式", new GUILayoutOption[1] { GUILayout.Width(50f) });
                     obfuscatorConfig.nameObfuscateType = (ObfuscateType)EditorGUILayout.Popup((int)obfuscatorConfig.nameObfuscateType, ObfuscateTypeStr);
+                    EditorGUILayout.EndHorizontal();
+                    GUILayout.Space(5f);
+                    EditorGUILayout.BeginHorizontal();
+                    EditorGUILayout.LabelField("名字来源", new GUILayoutOption[1] { GUILayout.Width(50f) });
+                    obfuscatorConfig.obfuscateNameType = (ObfuscateNameType)EditorGUILayout.Popup((int)obfuscatorConfig.obfuscateNameType, ObfuscateNameTypeStr);
                     EditorGUILayout.EndHorizontal();
                     GUILayout.Space(5f);
                     DrawRight();
