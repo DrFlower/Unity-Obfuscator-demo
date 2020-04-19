@@ -26,6 +26,9 @@
  >> Completed|GameManager|CallbackInitialization  
  >> Completed|Player|Restart  
  
+ >WhiteList-CodeInject-Class
+ >> Completed|Wall
+ 
  
  
 ## 配置说明
@@ -62,12 +65,19 @@
 混淆后代码：
 ![混淆后代码][6]
 
-可见配置了白名单的Completed命名空间名以及各个类名都没变，但除白名单内的3个方法以及Unity生命周期方法外，其他所有类成员名字都发生了变化，混淆结果符合预期。
+可见配置了白名单的Completed命名空间名以及各个类名都没变，但除白名单内的3个方法以及Unity生命周期方法外，其他所有类成员名字都发生了变化，名字混淆成功
+
+![混淆后代码2][7]
+
+可见GameManager中插入了大量内部调用Console.Write()的方法，这些是从垃圾代码库中注入的垃圾方法，垃圾代码注入成功。  
+![混淆后代码3][8]  
+
+上面在黑白名单配置中，WhiteList\-CodeInject\-Class文件配置了Completed|Wall，即Completed命名空间下的Wall类将不会注入对垃圾代码的调用，上图可见无垃圾代码调用，代码注入的黑白名单生效。 
 
 ---
-![游戏运行图][7]
+![游戏运行图][9]
 
-游戏正常运行，混淆成功。
+**游戏正常运行，混淆成功。**
 
 
   [1]: https://github.com/DrFlower/Unity-Obfuscator "Unity-Obfuscator"
@@ -76,4 +86,6 @@
   [4]: https://github.com/DrFlower/Unity-Obfuscator "Unity-Obfuscator"
   [5]: https://github.com/DrFlower/Unity-Obfuscator-demo/blob/master/Doc/ILSpyBeforeObfuscate.png "ILSpyBeforeObfuscate"
   [6]: https://github.com/DrFlower/Unity-Obfuscator-demo/blob/master/Doc/ILSpyAfterObfuscate.png "ILSpyAfterObfuscate"
-  [7]: https://github.com/DrFlower/Unity-Obfuscator-demo/blob/master/Doc/Game.png "Game"
+  [7]: https://github.com/DrFlower/Unity-Obfuscator-demo/blob/master/Doc/ILSpyAfterObfuscate2.png "ILSpyAfterObfuscate2"
+  [8]: https://github.com/DrFlower/Unity-Obfuscator-demo/blob/master/Doc/ILSpyAfterObfuscate3.png "ILSpyAfterObfuscate3"
+  [9]: https://github.com/DrFlower/Unity-Obfuscator-demo/blob/master/Doc/Game.png "Game"
