@@ -1,7 +1,8 @@
 # Unity-Obfuscator-demo
 
 ## 简介
-本项目为使用[Unity-Obfuscator][1]插件进行混淆的演示项目，游戏项目为Unity AssetStore上的官方资源[2D Rouguelike][2]。
+本项目为使用[Unity-Obfuscator][1]插件进行混淆的演示项目，游戏项目为Unity AssetStore上的官方资源[2D Rouguelike][2]。  
+此项目使用的Unity版本为2017.4.34f1。
 
 ## 配置详情
 
